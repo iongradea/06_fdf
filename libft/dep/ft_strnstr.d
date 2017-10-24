@@ -1,3 +1,0 @@
-bin/ft_strnstr.o: src/ft_strnstr.c src/../inc/libft.h
-src/ft_strnstr.c:
-src/../inc/libft.h:

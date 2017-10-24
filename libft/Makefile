@@ -6,7 +6,7 @@
 #    By: igradea <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/11 19:01:51 by igradea           #+#    #+#              #
-#    Updated: 2017/10/24 13:31:05 by igradea          ###   ########.fr        #
+#    Updated: 2017/10/24 16:06:52 by igradea          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,6 @@ SRC := ft_realloc.c ft_isspace.c	ft_isupper.c ft_islower.c	\
 # Directories
 SRC_DIR := src
 OBJ_DIR := bin
-DEP_DIR := dep
 
 # Flags, libraries, include
 # Several compile modes are defined: no flags, debug, standard
@@ -51,7 +50,6 @@ endif
 
 # Variables
 OBJ := $(SRC:.c=.o)
-DEP := $(SRC:.c=.d)
 
 all: $(NAME)
 
@@ -60,15 +58,6 @@ all: $(NAME)
 # .o files are in a subdirectory
 ./$(OBJ_DIR)/%.o: ./$(SRC_DIR)/%.c 
 	gcc $(CFLAGS) -c $< -o $@
-	gcc $(CFLAGS) -c -MM $< > ./$(DEP_DIR)/$*.d
-	@mv -f $(DEP_DIR)/$*.d $(DEP_DIR)/$*.d.tmp
-	@sed -e 's|.*:|$@:|' < $(DEP_DIR)/$*.d.tmp > $(DEP_DIR)/$*.d
-	@sed -e 's/.*://' -e 's/\\$$//' < $(DEP_DIR)/$*.d.tmp | fmt -1 | \
-	  sed -e 's/^ *//' -e 's/$$/:/' >> $(DEP_DIR)/$*.d
-	@rm -f $(DEP_DIR)/$*.d.tmp
-
-# pull in dependency info for *existing* .o files
--include $(addprefix ./$(DEP_DIR)/, $(DEP))
 
 # Creates library and index
 $(NAME): $(addprefix ./$(OBJ_DIR)/, $(OBJ))
@@ -77,7 +66,6 @@ $(NAME): $(addprefix ./$(OBJ_DIR)/, $(OBJ))
 
 clean:
 	/bin/rm -f $(addprefix ./$(OBJ_DIR)/, $(OBJ))
-	/bin/rm -f $(addprefix ./$(DEP_DIR)/, $(DEP))
 
 fclean: clean
 	/bin/rm -f $(NAME)

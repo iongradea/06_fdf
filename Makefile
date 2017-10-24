@@ -6,7 +6,7 @@
 #    By: igradea <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/24 15:08:53 by igradea           #+#    #+#              #
-#    Updated: 2017/10/24 15:09:08 by igradea          ###   ########.fr        #
+#    Updated: 2017/10/24 16:04:39 by igradea          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,10 @@ FLAGS_MLX = -L./mlx -lmlx -framework OpenGL -framework AppKit
 
 CC = gcc
 
-SRCS = ./src/main.c\
-	   ./src/ft_display.c\
-	   ./src/ft_draw.c\
-	   ./src/ft_parse.c\
-	   ./src/get_next_line.c\
-	   ./src/ft_proj.c\
-	   ./src/valid_map.c\
-	   ./src/key_hook.c\
+SRC = main.c 0_ch_in_err.c
 
-OBJS = $(SRCS:.c=.o)
+SRCS = $(addprefix ./src/, $(SRC))
+OBJS = $(addprefix ./src/, $(SRC:.c=.o))
 
 LIBFT = -L./libft -lft
 
@@ -45,6 +39,7 @@ $(NAME):$(OBJS)
 clean:
 	rm -rf $(OBJS)
 	make -C $(LIBFT_PATH) clean
+	make -C $(MLX_PATH) clean
 
 fclean: clean
 	rm -rf $(NAME)
