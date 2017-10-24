@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 16:21:07 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 16:12:40 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 16:33:17 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ char				*ft_strnjoin(char const *s1, char const *s2,
 								size_t n1, size_t n2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
-int					ft_count_nb_words(const char *s, char c);
 char				*ft_itoa(int nbr);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);

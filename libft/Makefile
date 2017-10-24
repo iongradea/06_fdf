@@ -6,7 +6,7 @@
 #    By: igradea <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/11 19:01:51 by igradea           #+#    #+#              #
-#    Updated: 2017/10/24 16:06:52 by igradea          ###   ########.fr        #
+#    Updated: 2017/10/24 16:34:01 by igradea          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC := ft_realloc.c ft_isspace.c	ft_isupper.c ft_islower.c	\
 			ft_strncmp.c ft_atoi.c ft_strnew.c ft_strdel.c	\
 			ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c	\
 			ft_strmapi.c ft_strequ.c ft_strnequ.c	ft_strsub.c	\
-			ft_strjoin.c ft_strtrim.c	ft_strsplit.c ft_count_nb_words.c	\
+			ft_strjoin.c ft_strtrim.c	ft_strsplit.c \
 			ft_itoa.c	ft_putchar.c ft_putstr.c ft_putendl.c	\
 			ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c	\
 			ft_putnbr_fd.c ft_lstnew.c ft_lstdelone.c	\

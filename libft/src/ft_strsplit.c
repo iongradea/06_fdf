@@ -5,43 +5,68 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/10 14:13:41 by igradea           #+#    #+#             */
-/*   Updated: 2017/08/30 14:18:27 by iongradea        ###   ########.fr       */
+/*   Created: 2017/10/24 16:32:08 by igradea           #+#    #+#             */
+/*   Updated: 2017/10/24 16:32:13 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-static	void	ft_init_var(int *i, int *len, int *index)
+static char	**ft_create_tab(const char *s, char c,
+	int nb_word, int max_len_word)
 {
-	*i = 0;
-	*len = 0;
-	*index = 0;
+	char	**tab;
+	int		i;
+	int		j;
+	int		k;
+
+	if (!(tab = (char **)malloc(sizeof(*tab) * nb_word + 1)))
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		k = 0;
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i] != c && s[i])
+		{
+			if (!(tab[j] = (char *)malloc(sizeof(**tab) * max_len_word + 1)))
+				return (NULL);
+			while (s[i] != c && s[i])
+				tab[j][k++] = s[i++];
+			tab[j++][k] = '\0';
+		}
+	}
+	tab[j] = NULL;
+	return (tab);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(const char *s, char c)
 {
-	char	**res;
 	int		i;
-	int		len;
-	int		index;
-	int		count_wds;
+	int		nb_word;
+	int		len_word;
+	int		max_len_word;
 
-	ft_init_var(&i, &len, &index);
-	count_wds = ft_count_nb_words(s, c);
-	if (!(res = (char**)malloc(sizeof(*res) * (count_wds + 1))))
+	if (!s || !c)
 		return (NULL);
-	while (index < count_wds)
+	i = 0;
+	nb_word = 0;
+	max_len_word = 0;
+	while (s[i])
 	{
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
-		while (s[i + len] != c)
-			len++;
-		res[index] = ft_strsub(s, i, len);
-		index++;
-		i += len;
-		len = 0;
+		if (s[i] != c && s[i])
+		{
+			nb_word++;
+			len_word = 0;
+			while (s[i] != c && s[i++])
+				len_word++;
+			if (len_word > max_len_word)
+				max_len_word = len_word;
+		}
 	}
-	res[index] = NULL;
-	return (res);
+	return (ft_create_tab(s, c, nb_word, max_len_word));
 }
