@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:34:11 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 16:12:05 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 16:16:11 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ int		main(int ac, char **av)
 	fd = 0;
 	if (ch_main_err(fd, ac, av, &map) != TRUE)
 		return (ERROR);
+	write(1, "OK\n", 3);
 	return (0);
 }
