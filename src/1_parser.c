@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 17:48:21 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 22:08:18 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 22:20:48 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,3 @@ int			parser(t_point **map_pts, t_map map_c, int fd)
 		return (ERROR);
 	return (TRUE);
 }
-

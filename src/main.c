@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:34:11 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 22:06:56 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 22:32:42 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,24 @@ int		main(int ac, char **av)
 		return (ERROR);
 	write(1, "2\n", 2);
 	if ((fd = open(av[1], O_RDONLY)) == ERROR)
+	{
+		close(fd);
 		return (ERROR);
+	}
 	write(1, "3\n", 2);
 	if (!(map_pts = (t_point**)ft_memalloc(sizeof(t_point*) 
 					* (map_c.nb_pts / map_c.line_len + 1))))
 		return (ERROR);
-	write(1, "line_len : ", 11);
+/*	write(1, "line_len : ", 11);
 	ft_putnbr(map_c.line_len);
 	write(1, "\n", 1);
 	write(1, "nb_pts : ", 9);
 	ft_putnbr(map_c.nb_pts);
-	write(1, "\n", 1);
+	write(1, "\n", 1);*/
 	write(1, "4\n", 2);
 	if (parser(map_pts, map_c, fd) != TRUE)
 		return (ERROR);
+
 	write(1, "OK\n", 3);
 	return (0);
 }

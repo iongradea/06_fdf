@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 19:34:33 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 22:20:24 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,10 @@ typedef struct		s_point
 	int				in_tab;
 }					t_point;
 
-typedef struct		s_param
+typedef struct		s_map
 {
 	void			*mlx;
 	void			*win;
-}					t_param;
-
-typedef struct		s_map
-{
 	int				line_len;
 	int				nb_pts;
 }					t_map;
