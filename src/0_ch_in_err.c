@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:36:12 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 21:01:41 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 22:02:36 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ static int	ch_line(char *line)
 
 	i = 0;
 	len = ft_strlen(line);
-	if (line[0] == ' ')
-		return (ERROR_MAP);
+	// removes spaces at the beginning
+	//if (line[0] == ' ')
+	//	return (ERROR_MAP);
 	while (line[i] && line[i + 1])
 	{
 		if (ch_char(line[i]) == ERROR_MAP)
