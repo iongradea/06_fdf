@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 12:28:44 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 14:07:15 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # include <fcntl.h>
 
 # define BUFF_SIZE 1500
+# define TRUE -1
+# define FALSE 0
+# define ERROR -2
+# define ERROR_MAP -3
 
 typedef struct		s_point
 {
@@ -36,8 +40,8 @@ typedef struct		s_param
 
 typedef struct		s_map
 {
-	int				line_size;
-	int				nb_points;
+	int				line_len;
+	int				nb_pts;
 }					t_map;
 
 #endif
