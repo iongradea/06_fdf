@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:36:12 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 16:42:05 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 17:22:40 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static int	ch_char(char c)
 	return (TRUE);
 }
 
-static int	ch_plus_minus(char *str)
+static int	ch_plus_minus_sp(char *str)
 {
-	if ((*str == '-' || *str == '+') && !ft_isdigit(*(str + 1)))
+	if ((*str == '-' || *str == '+' || *str == ' ') && !ft_isdigit(*(str + 1)))
 		return (ERROR_MAP);
 	return (TRUE);
 }
@@ -38,7 +38,7 @@ static int	ch_line(char *line)
 	{
 		if (ch_char(line[i]) == ERROR_MAP)
 			return (ERROR_MAP);
-		if (ch_plus_minus(line + i) == ERROR_MAP)
+		if (ch_plus_minus_sp(line + i) == ERROR_MAP)
 			return (ERROR_MAP);
 		i++;
 	}
