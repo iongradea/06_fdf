@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:34:11 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 15:05:50 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 16:12:05 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ch_main_err(int fd, int ac, char **av, t_map *map)
 		close(fd);
 		return (ERROR);
 	}
-	if (ch_map_err(fd, &map, &tab) == ERROR_MAP)
+	if (ch_map_err(fd, map, &tab) == ERROR_MAP)
 	{
 		write(1, "Map error\n", 10);
 		close(fd);
@@ -38,6 +38,7 @@ int		main(int ac, char **av)
 	t_map	map;
 	int		fd;
 
+	fd = 0;
 	if (ch_main_err(fd, ac, av, &map) != TRUE)
 		return (ERROR);
 	return (0);

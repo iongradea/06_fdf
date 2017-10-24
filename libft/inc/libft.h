@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 16:21:07 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 11:37:47 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 16:12:40 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+int					ft_tablen(char **tab);
 int					ft_isspace(char c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
