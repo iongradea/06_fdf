@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:36:12 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 14:27:00 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 15:05:52 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	ch_line(char *line)
 	}
 	if (i == len - 1 && ch_char(line[i]) == ERROR_MAP)
 		return (ERROR_MAP);
-	return (TRUE);
+	return (TRUE)t;
 }
 
 void		free_ptr_dbl(void **tab)
