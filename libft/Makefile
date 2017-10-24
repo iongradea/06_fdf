@@ -6,7 +6,7 @@
 #    By: igradea <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/11 19:01:51 by igradea           #+#    #+#              #
-#    Updated: 2017/10/24 16:34:01 by igradea          ###   ########.fr        #
+#    Updated: 2017/10/24 20:45:15 by igradea          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,14 @@ SRC := ft_realloc.c ft_isspace.c	ft_isupper.c ft_islower.c	\
 			ft_strncmp.c ft_atoi.c ft_strnew.c ft_strdel.c	\
 			ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c	\
 			ft_strmapi.c ft_strequ.c ft_strnequ.c	ft_strsub.c	\
-			ft_strjoin.c ft_strtrim.c	ft_strsplit.c \
+			ft_strjoin.c ft_strtrim.c	ft_strsplit.c ft_strndup.c \
 			ft_itoa.c	ft_putchar.c ft_putstr.c ft_putendl.c	\
 			ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c	\
 			ft_putnbr_fd.c ft_lstnew.c ft_lstdelone.c	\
 			ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
 			ft_sqrt.c ft_abs.c ft_max.c ft_print_memory.c ft_itoa_base.c \
-			ft_strnjoin.c ft_min.c ft_tablen.c get_next_line.c
+			ft_strnjoin.c ft_min.c ft_tablen.c get_next_line.c \
+			ft_atoi_max_int.c
 
 # Directories
 SRC_DIR := src
@@ -45,7 +46,7 @@ ifeq ($(MODE), debug)
 	CFLAGS = -g
 endif
 else
-	CFLAGS = -Wall -Wextra -Werror
+	CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 endif
 
 # Variables

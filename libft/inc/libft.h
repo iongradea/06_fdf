@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 16:21:07 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 16:33:17 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 20:43:35 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,18 @@
 # define C_MAGENTA "\033[35m"
 # define C_CYAN "\033[36m"
 
+# define TRUE 1
+# define FALSE 0
+# define ERROR -1
+
+# include <limits.h>
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
 
+int					ft_atoi_max_int(const char *str, int *n);
 int					ft_tablen(char **tab);
+char				*ft_strndup(char const *s1, size_t n);
 int					ft_isspace(char c);
 int					ft_isupper(int c);
 int					ft_islower(int c);

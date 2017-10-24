@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:36:12 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 17:43:03 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 21:01:41 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,17 @@ static int	ch_line(char *line)
 
 	i = 0;
 	len = ft_strlen(line);
+	if (line[0] == ' ')
+		return (ERROR_MAP);
 	while (line[i] && line[i + 1])
 	{
 		if (ch_char(line[i]) == ERROR_MAP)
 			return (ERROR_MAP);
 		if (ch_plus_minus_sp(line + i) == ERROR_MAP)
 			return (ERROR_MAP);
+		// removes maps with space at the end
+		//if (i == len - 2 && line[i + 1] == ' ')
+		//	return (ERROR_MAP);
 		i++;
 	}
 	if (i == len - 1 && ch_char(line[i]) == ERROR_MAP)
@@ -54,7 +59,7 @@ void		free_ptr_dbl(void **tab)
 	int		i;
 
 	i = 0;
-	while (tab[i])
+	while (tab && tab[i])
 		free(tab[i++]);
 }
 
@@ -66,7 +71,7 @@ int			ch_map_err(int fd, t_map *map, char ***tab)
 	char	*line;
 
 	i = 0;
-	while ((ret = get_next_line(fd, &line)) != 0)
+	while ((ret = get_next_line(fd, &line)) == LINE_READ_GNL)
 	{
 		if (ch_line(line) == ERROR_MAP)
 			return (ERROR_MAP);
@@ -79,6 +84,8 @@ int			ch_map_err(int fd, t_map *map, char ***tab)
 		i++;
 		free_ptr_dbl((void**)*tab);
 	}
+	if (ret == ERROR)
+		return (ERROR);
 	map->nb_pts = i * map->line_len;
 	if (map->nb_pts < 2)
 		return (ERROR_MAP);

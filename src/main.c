@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:34:11 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 17:17:47 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/24 21:18:17 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,27 @@ static int	ch_main_err(int fd, int ac, char **av, t_map *map)
 
 int		main(int ac, char **av)
 {
-	t_map	map;
+	t_map	map_c;
 	int		fd;
+	t_point	**map_pts;
 
 	fd = 0;
-	if (ch_main_err(fd, ac, av, &map) != TRUE)
+	write(1, "1\n", 2);
+	if (ch_main_err(fd, ac, av, &map_c) != TRUE)
+		return (ERROR);
+	write(1, "2\n", 2);
+	if ((fd = open(av[1], O_RDONLY)) == ERROR)
+		return (ERROR);
+	write(1, "3\n", 2);
+	if (!(map_pts = (t_point**)ft_memalloc(sizeof(t_point*) 
+					* (map_c.nb_pts / map_c.line_len + 1))))
+		return (ERROR);
+	ft_putnbr(map_c.line_len);
+	write(1, "\n", 1);
+	ft_putnbr(map_c.nb_pts);
+	write(1, "\n", 1);
+	write(1, "4\n", 2);
+	if (parser(map_pts, map_c, fd) != TRUE)
 		return (ERROR);
 	write(1, "OK\n", 3);
 	return (0);
