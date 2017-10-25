@@ -6,7 +6,7 @@
 #    By: igradea <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/24 15:08:53 by igradea           #+#    #+#              #
-#    Updated: 2017/10/25 18:08:34 by igradea          ###   ########.fr        #
+#    Updated: 2017/10/25 18:35:19 by igradea          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,9 @@ LIBFT_PATH = ./libft
 MLX_PATH = ./mlx
 
 all: $(NAME)
+
+$(OBJS): $(SRCS)
+	$(CC) $(FLAGS) -c $< -o $@ 
 
 $(NAME):$(OBJS)
 	make -C $(LIBFT_PATH)
