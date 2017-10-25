@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:34:11 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 15:23:04 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 15:34:40 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static void	init_map_c(t_map *map)
 	map->line_len = FALSE;
 	map->nb_pts = FALSE;
 	map->zoom = ZOOM;
-	map->win_x = FALSE;
-	map->win_y = FALSE;
+	map->win_x = WIN_X / 2;
+	map->win_y = WIN_Y / 2;
 	map->map_pts = NULL;
 }
 

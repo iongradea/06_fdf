@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 15:06:17 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 15:37:32 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <math.h>
 # include <fcntl.h>
 
-# define ZOOM 20
+
 # define LINE_READ_GNL 1
 # define TRUE 1
 # define FALSE 0
@@ -29,6 +29,9 @@
 # define ERROR_GNL -4
 # define ERROR_INT -5
 
+# define ZOOM 20
+# define WIN_X 1920
+# define WIN_Y 1080
 # define ZOOM_MIN 78
 # define ZOOM_PLUS 69
 # define UP 126
@@ -73,7 +76,7 @@ typedef struct		s_bresen
 int					ch_map_err(int fd, t_map *map);
 int					parser(t_point *map_pts, t_map map_c, int fd);
 int					display(t_point *map_pts, t_map *map_c);
-int					proj_iso(t_point *map);
+int					proj_iso(t_point *map, t_map map_c);
 int					draw(t_point *map, t_map map_c);
 int					key_hook(int keycode, t_map *map);
 
