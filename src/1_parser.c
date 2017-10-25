@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 17:48:21 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 02:18:32 by iongradea        ###   ########.fr       */
+/*   Updated: 2017/10/25 02:43:22 by iongradea        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,22 +75,22 @@ int			parser(t_point *map_pts, t_map map_c, int fd)
 			if (ft_atoi_max_int(line + pos, &n) == ERROR)
 				return (ERROR_INT);
 			new_point(map_pts + y * map_c.line_len + x, x, y, n);
-		/*	write(1, "x : ", 4);
+			write(1, "x : ", 4);
 			ft_putnbr(x);
-			write(1, "\n", 1);*/
+			write(1, "\n", 1);
 			x++;
 			pos = go_to_next_nb(line, pos);
-			/*write(1, "n : ", 4);
+			write(1, "n : ", 4);
 			ft_putnbr(n);
-			write(1, "\n", 1);*/
+			write(1, "\n", 1);
 		}
-		/*write(1, "y : ", 4);
+		write(1, "y : ", 4);
 		ft_putnbr(y);
 		write(1, "\n", 1);
-		write(1, "\n", 1);*/
+		write(1, "\n", 1);
 		y++;
 	}
-	set_point_as_end(map_pts + y * map_c.line_len + x);
+	set_point_as_end(map_pts + y * map_c.line_len);
 	if (ret == ERROR)
 		return (ERROR);
 	return (TRUE);
