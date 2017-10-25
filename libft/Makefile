@@ -6,7 +6,7 @@
 #    By: igradea <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/11 19:01:51 by igradea           #+#    #+#              #
-#    Updated: 2017/10/25 16:58:01 by igradea          ###   ########.fr        #
+#    Updated: 2017/10/25 18:43:15 by igradea          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ all: $(NAME)
 # The last 4 lines modify the .d files in order to make it work when 
 # .o files are in a subdirectory
 ./$(OBJ_DIR)/%.o: ./$(SRC_DIR)/%.c 
+	@/bin/mkdir -p $(OBJ_DIR)
 	gcc $(CFLAGS) -c $< -o $@
 
 # Creates library and index
@@ -66,7 +67,7 @@ $(NAME): $(addprefix ./$(OBJ_DIR)/, $(OBJ))
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(addprefix ./$(OBJ_DIR)/, $(OBJ))
+	/bin/rm -rf $(OBJ_DIR)
 
 fclean: clean
 	/bin/rm -f $(NAME)

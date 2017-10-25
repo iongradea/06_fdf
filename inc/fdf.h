@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 17:34:41 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 18:43:55 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@
 # define U 32
 # define D 2
 # define R 15
-# define COLOR 8
 
 typedef struct		s_point
 {
