@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 12:23:11 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 13:34:38 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,21 @@ typedef struct		s_map
 	int				zoom;
 }					t_map;
 
+typedef struct		s_bresen
+{
+	float			dx;
+	float			dy;
+	float			cumul;
+	float			xinc;
+	float			yinc;
+	float			x;
+	float			y;
+}					t_bresen;
+
 int					ch_map_err(int fd, t_map *map);
 int					parser(t_point *map_pts, t_map map_c, int fd);
 int					display(t_point *map_pts, t_map *map_c);
 int					proj_iso(t_point *map);
+int					draw(t_point *map, t_map map_c);
 
 #endif
