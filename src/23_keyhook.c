@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 14:44:32 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 16:56:39 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 17:02:47 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int		key_hook(int keycode, t_map *map)
 {
-/*	ft_putstr("\n");
-	ft_putnbr(keycode);
-	ft_putstr("\n");*/
 	if (keycode == ESC)
 	{
 		mlx_destroy_window(map->mlx, map->win);

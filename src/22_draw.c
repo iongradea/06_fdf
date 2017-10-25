@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 12:34:55 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 16:45:22 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 17:02:37 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,38 +69,6 @@ static int	sub_draw(t_bresen bre, t_map map_c)
 	}
 	return (TRUE);
 }
-/*
-if ( dx > dy )
-{
-	cumul = dx / 2 ;
-	for ( i = 1 ; i <= dx ; i++ ) 
-	{
-		x += xinc ;
-		cumul += dy ;
-		if ( cumul >= dx ) 
-		{
-			cumul -= dx ;
-			y += yinc ; 
-		}
-		allume_pixel(x,y) ; 
-	} 
-}
-else 
-{
-	cumul = dy / 2 ;
-	for ( i = 1 ; i <= dy ; i++ ) 
-	{
-		y += yinc ;
-		cumul += dx ;
-		if ( cumul >= dy ) 
-		{
-			cumul -= dy ;
-			x += xinc ; 
-		}
-		allume_pixel(x,y) ; 
-	} 
-}*/
-				
 
 int			draw(t_point *map, t_map map_c)
 {
