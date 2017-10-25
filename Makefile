@@ -6,13 +6,13 @@
 #    By: igradea <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/24 15:08:53 by igradea           #+#    #+#              #
-#    Updated: 2017/10/25 14:51:39 by igradea          ###   ########.fr        #
+#    Updated: 2017/10/25 16:58:23 by igradea          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 
-FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 
 FLAGS_MLX = -L./mlx -lmlx -framework OpenGL -framework AppKit
 

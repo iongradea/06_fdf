@@ -6,7 +6,7 @@
 #    By: igradea <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/11 19:01:51 by igradea           #+#    #+#              #
-#    Updated: 2017/10/24 20:45:15 by igradea          ###   ########.fr        #
+#    Updated: 2017/10/25 16:58:01 by igradea          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,10 +43,10 @@ ifdef MODE
 ifeq ($(MODE), no)
 endif
 ifeq ($(MODE), debug)
-	CFLAGS = -g
+	CFLAGS = -g3 -fsanitize=address
 endif
 else
-	CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+	CFLAGS = -Wall -Wextra -Werror
 endif
 
 # Variables
