@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 22:20:24 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 02:29:31 by iongradea        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ typedef struct		s_map
 	int				nb_pts;
 }					t_map;
 
-int					ch_map_err(int fd, t_map *map, char ***tab);
-void				free_ptr_dbl(void **tab);
-int					parser(t_point **map_pts, t_map map_c, int fd);
+int					ch_map_err(int fd, t_map *map);
+int					parser(t_point *map_pts, t_map map_c, int fd);
 
 #endif

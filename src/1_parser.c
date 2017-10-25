@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 17:48:21 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/24 22:20:48 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 02:18:32 by iongradea        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	go_to_next_nb(char *line, int pos)
 	return (pos);
 }
 
-int			parser(t_point **map_pts, t_map map_c, int fd)
+int			parser(t_point *map_pts, t_map map_c, int fd)
 {
 	int		x;
 	int		y;
@@ -68,14 +68,13 @@ int			parser(t_point **map_pts, t_map map_c, int fd)
 		write(1, "nb_pts : ", 9);
 		ft_putnbr(map_c.nb_pts);
 		write(1, "\n", 1);*/
-		if (!(map_pts[y] = (t_point*)ft_memalloc(sizeof(t_point) * 
-						(map_c.line_len + 1))))
-			return (ERROR);
-		while (line[pos])
+		while (line[pos]) 
+			// normally x < map_c.line_len always true here !!
+			// can be added as security just in cas !
 		{
 			if (ft_atoi_max_int(line + pos, &n) == ERROR)
 				return (ERROR_INT);
-			new_point(map_pts[y] + x, x, y, n);
+			new_point(map_pts + y * map_c.line_len + x, x, y, n);
 		/*	write(1, "x : ", 4);
 			ft_putnbr(x);
 			write(1, "\n", 1);*/
@@ -85,14 +84,13 @@ int			parser(t_point **map_pts, t_map map_c, int fd)
 			ft_putnbr(n);
 			write(1, "\n", 1);*/
 		}
-		set_point_as_end(map_pts[y] + x);
 		/*write(1, "y : ", 4);
 		ft_putnbr(y);
 		write(1, "\n", 1);
 		write(1, "\n", 1);*/
 		y++;
 	}
-	map_pts[y] = NULL;
+	set_point_as_end(map_pts + y * map_c.line_len + x);
 	if (ret == ERROR)
 		return (ERROR);
 	return (TRUE);
