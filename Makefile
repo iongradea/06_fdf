@@ -6,7 +6,7 @@
 #    By: igradea <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/24 15:08:53 by igradea           #+#    #+#              #
-#    Updated: 2017/10/24 20:37:32 by igradea          ###   ########.fr        #
+#    Updated: 2017/10/25 03:22:14 by iongradea        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FLAGS_MLX = -L./mlx -lmlx -framework OpenGL -framework AppKit
 
 CC = gcc
 
-SRC = main.c 0_ch_in_err.c 1_parser.c
+SRC = main.c 0_ch_in_err.c 1_parser.c 2_display.c 21_proj.c
 
 SRCS = $(addprefix ./src/, $(SRC))
 OBJS = $(addprefix ./src/, $(SRC:.c=.o))

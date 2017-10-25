@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 17:48:21 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 02:43:22 by iongradea        ###   ########.fr       */
+/*   Updated: 2017/10/25 03:05:53 by iongradea        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void	new_point(t_point *p, int x, int y, int z)
 	p->x = x * 1.0;
 	p->y = y * 1.0;
 	p->z = z * 1.0;
+	p->x_proj = NONE;
+	p->y_proj = NONE;
 	p->in_tab = TRUE;
 }
 
@@ -32,6 +34,8 @@ static void	set_point_as_end(t_point *p)
 	p->x = 0;
 	p->y = 0;
 	p->z = 0;
+	p->x_proj = NONE;
+	p->y_proj = NONE;
 	p->in_tab = FALSE;
 }
 
