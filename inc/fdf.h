@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 15:37:32 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 16:31:28 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@
 # define ERROR_GNL -4
 # define ERROR_INT -5
 
+# define COMPRESS_Z 3
+# define ADJUST_Z 1
+# define REV_Z -1
 # define ZOOM 20
 # define WIN_X 1920
 # define WIN_Y 1080
@@ -39,6 +42,10 @@
 # define LEFT 123
 # define RIGHT 124
 # define ESC 53
+# define U 32
+# define D 2
+# define R 15
+# define COLOR 8
 
 typedef struct		s_point
 {
@@ -57,6 +64,8 @@ typedef struct		s_map
 	int				line_len;
 	int				nb_pts;
 	int				zoom;
+	int				adjust_z;
+	int				rev_z;
 	int				win_x;
 	int				win_y;
 	t_point			*map_pts;

@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 14:44:32 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 15:39:05 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 16:56:39 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int		key_hook(int keycode, t_map *map)
 {
+/*	ft_putstr("\n");
+	ft_putnbr(keycode);
+	ft_putstr("\n");*/
 	if (keycode == ESC)
 	{
 		mlx_destroy_window(map->mlx, map->win);
@@ -25,6 +28,12 @@ int		key_hook(int keycode, t_map *map)
 		map->win_x = keycode == RIGHT ? map->win_x + 100 : map->win_x - 100;
 	if (keycode == DOWN || keycode == UP)
 		map->win_y = keycode == DOWN ? map->win_y + 100 : map->win_y - 100;
+	if (keycode == U)
+		map->adjust_z += 1;
+	if (keycode == D)
+		map->adjust_z -= 1;
+	if (keycode == R)
+		map->rev_z *= REV_Z;
 	mlx_clear_window(map->mlx, map->win);
 	proj_iso(map->map_pts, *map);
 	draw(map->map_pts, *map);
