@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 03:30:12 by iongradea        ###   ########.fr       */
+/*   Updated: 2017/10/25 03:40:17 by iongradea        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct		s_map
 	void			*win;
 	int				line_len;
 	int				nb_pts;
+	int				zoom;
 }					t_map;
 
 int					ch_map_err(int fd, t_map *map);
