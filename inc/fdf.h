@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 13:34:38 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 15:06:17 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@
 # define ERROR_GNL -4
 # define ERROR_INT -5
 
+# define ZOOM_MIN 78
+# define ZOOM_PLUS 69
+# define UP 126
+# define DOWN 125
+# define LEFT 123
+# define RIGHT 124
+# define ESC 53
+
 typedef struct		s_point
 {
 	float			x;
@@ -46,6 +54,9 @@ typedef struct		s_map
 	int				line_len;
 	int				nb_pts;
 	int				zoom;
+	int				win_x;
+	int				win_y;
+	t_point			*map_pts;
 }					t_map;
 
 typedef struct		s_bresen
@@ -64,5 +75,6 @@ int					parser(t_point *map_pts, t_map map_c, int fd);
 int					display(t_point *map_pts, t_map *map_c);
 int					proj_iso(t_point *map);
 int					draw(t_point *map, t_map map_c);
+int					key_hook(int keycode, t_map *map);
 
 #endif
