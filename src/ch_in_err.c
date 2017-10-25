@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:36:12 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 17:01:21 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 18:02:29 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static int	ch_plus_minus_sp(char *str)
 {
 	if ((*str == '-' || *str == '+') && !ft_isdigit(*(str + 1)))
 		return (ERROR_MAP);
-	if (*str == ' ' && !ft_isdigit(*(str + 1)) && *(str + 1) != '-' 
-				&& *(str + 1) != '+' && *(str + 1) != ' ')
+	if (*str == ' ' && !ft_isdigit(*(str + 1)) && *(str + 1) != '-'
+			&& *(str + 1) != '+' && *(str + 1) != ' ')
 		return (ERROR_MAP);
 	return (TRUE);
 }

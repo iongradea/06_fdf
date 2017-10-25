@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 17:48:21 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 17:01:51 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 18:04:24 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,16 @@ int			parser(t_point *map_pts, t_map map_c, int fd)
 {
 	int		x;
 	int		y;
-	int		ret;
 	char	*line;
 	int		pos;
 	int		n;
 
 	y = 0;
-	while ((ret = get_next_line(fd, &line)) == LINE_READ_GNL)
+	while ((n = get_next_line(fd, &line)) == LINE_READ_GNL)
 	{
 		x = 0;
 		pos = 0;
-		while (line[pos]) 
+		while (line[pos])
 		{
 			if (ft_atoi_max_int(line + pos, &n) == ERROR)
 				return (ERROR_INT);
@@ -75,7 +74,7 @@ int			parser(t_point *map_pts, t_map map_c, int fd)
 		y++;
 	}
 	set_point_as_end(map_pts + y * map_c.line_len);
-	if (ret == ERROR)
+	if (n == ERROR)
 		return (ERROR);
 	return (TRUE);
 }

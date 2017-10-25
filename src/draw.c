@@ -6,12 +6,11 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 12:34:55 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 17:02:37 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 18:05:33 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fdf.h"
-
 
 static int	set_bresen(t_bresen *bre, t_point pt, t_point next)
 {
@@ -78,7 +77,7 @@ int			draw(t_point *map, t_map map_c)
 	pos = 0;
 	while (map && ((map + pos)->in_tab == TRUE))
 	{
-		mlx_pixel_put(map_c.mlx, map_c.win, (map + pos)->x_proj, 
+		mlx_pixel_put(map_c.mlx, map_c.win, (map + pos)->x_proj,
 				(map + pos)->y_proj, 0x00FFFFFF);
 		if ((pos + 1) % map_c.line_len != 0)
 		{

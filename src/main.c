@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:34:11 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 17:00:03 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 18:06:43 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ static int	close_fd_exit_error(int fd, int err)
 	if (err == ERROR)
 	{
 		close(fd);
-		return(ERROR);
+		return (ERROR);
 	}
 	return (TRUE);
 }
 
-int		main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_map	map_c;
 	int		fd;
@@ -66,7 +66,7 @@ int		main(int ac, char **av)
 		return (ERROR);
 	if ((fd = open(av[1], O_RDONLY)) == ERROR)
 		close_fd_exit_error(fd, ERROR);
-	if (!(map_pts = (t_point*)ft_memalloc(sizeof(t_point) 
+	if (!(map_pts = (t_point*)ft_memalloc(sizeof(t_point)
 					* (map_c.nb_pts + 1))))
 		close_fd_exit_error(fd, ERROR);
 	map_c.map_pts = map_pts;
