@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 11:23:25 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 16:31:28 by igradea          ###   ########.fr       */
+/*   Updated: 2017/10/25 17:34:41 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct		s_map
 	int				line_len;
 	int				nb_pts;
 	int				zoom;
-	int				adjust_z;
+	float			adjust_z;
 	int				rev_z;
 	int				win_x;
 	int				win_y;
