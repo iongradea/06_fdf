@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 17:48:21 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 03:05:53 by iongradea        ###   ########.fr       */
+/*   Updated: 2017/10/25 12:24:08 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	set_point_as_end(t_point *p)
 static int	go_to_next_nb(char *line, int pos)
 {
 	// solves pb with space at the beginning of line
-	if (line[pos] == ' ')
+	while (line[pos] == ' ')
 		pos++;
 	while (line[pos] && is_nb(line[pos]))
 		pos++;

@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:34:11 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 03:25:03 by iongradea        ###   ########.fr       */
+/*   Updated: 2017/10/25 12:22:53 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		main(int ac, char **av)
 	write(1, "4\n", 2);
 	if (parser(map_pts, map_c, fd) != TRUE)
 		return (ERROR);
-	display(map_pts, map_c);
+	display(map_pts, &map_c);
 	free(map_pts);
 	write(1, "OK\n", 3);
 	return (0);

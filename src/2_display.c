@@ -6,7 +6,7 @@
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 22:26:01 by igradea           #+#    #+#             */
-/*   Updated: 2017/10/25 03:41:23 by iongradea        ###   ########.fr       */
+/*   Updated: 2017/10/25 12:25:24 by igradea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int		display(t_point *map, t_map *map_c)
 	proj_iso(map);
 
 //	mlx_key_hook(map_c->win, key_hook, *map_c);
-//	mlx_loop(map_c->mlx);
+	mlx_loop(map_c->mlx);
 	return (TRUE);
 }
